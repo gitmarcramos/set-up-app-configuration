@@ -23,5 +23,28 @@ router.get("/", ((req, res, next) => {
 }));
 
 
-// route for the all-cat page
+// route for the all-cat page, with a callback function "catController"
 router.get("/all-cats", catController);
+
+
+// route for the cat detail. 
+//This one is tricky: it creates a page without having to hardcode it, by generating a page using the ObjectID of the database document
+// Use "/:id" to fetch the ID of the selected element, an then render it on the proper HBS page
+// Use of ASYNC/AWAIT inside the function to handle the promise, if needed (ie: database call)
+// Execute the logic inside the TRY bloc, handle the error inside the CATCH block
+router.get("/:id", async (req, res, next) => {
+    // TRY to executes the code asynchronously
+    try{
+              //logic goes here 
+        //======> +++++++++ <===============
+
+        // renders the elemnts of the page
+        res.render("details-cat.hbs", {
+            //render different elements of the page here
+        })
+        // if the code is not executed, send an error to the terminal
+    } catch (e) {
+        console.error(e);
+    }
+
+})

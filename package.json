@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
 
-    "": "<===== creates a dev variable that nodemon the main file app.js but also watches the changes in the fs and hbs files =====>",
+    "": "<===== creates a dev variable that nodemon the main file app.js and also evaluates (-e) the changes in the fs and hbs files =====>",
     "dev": "nodemon app.js -e .js,.hbs"
   },
   "author": "marc ramos",
