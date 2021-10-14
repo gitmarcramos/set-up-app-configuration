@@ -10,6 +10,9 @@ const port = 5550
 
 
 //! INITIAL SETUP
+
+// make accessible the elements used in POST (like forms...)
+app.use(express.urlencoded());
 // set the rendering engine for the views to hbs (see const hbs)
 app.set("view engine", hbs);  
 // set the path for the views
